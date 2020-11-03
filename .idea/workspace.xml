@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a55f969e-5445-4be3-b113-1ff2b0d1428e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$USER_HOME$/DevLib/maven/maven-jar" />
+        <option name="mavenHome" value="$USER_HOME$/DevLib/maven/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="$USER_HOME$/DevLib/maven/apache-maven-3.6.3/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadAnnotationsAutomatically" value="true" />
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+        <option name="jdkForImporter" value="1.8" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1jdCbxsp2vnLxPEtwX6lKBTfJAK" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cloud-oauth2-common/src/main/java/com/kll/common/constant" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.5120828" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="spring.boot" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cloud-oauth2-common/src/main/java/com/kll/common/constant" />
+      <recent name="$PROJECT_DIR$/cloud-oauth2-gateway/src/main/java/com/kll/gateway" />
+      <recent name="$PROJECT_DIR$/cloud-oauth2-auth/src/main/java/com/kll/oauth" />
+      <recent name="$PROJECT_DIR$/cloud_oauth2_api/src/main/resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.kll.common.constant" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cloud_oauth2_api/src/main/java/com/kll/api" />
+      <recent name="$PROJECT_DIR$/cloud-oauth2-auth/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Oauth2AuthApplication">
+    <configuration name="Oauth2ApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="cloud_oauth2_api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kll.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kll.api.Oauth2ApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Oauth2AuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="cloud-oauth2-auth" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kll.oauth.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kll.oauth.Oauth2AuthApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Oauth2GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="cloud-oauth2-gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kll.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kll.gateway.Oauth2GatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.Oauth2AuthApplication" />
+        <item itemvalue="Spring Boot.Oauth2GatewayApplication" />
+        <item itemvalue="Spring Boot.Oauth2ApiApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a55f969e-5445-4be3-b113-1ff2b0d1428e" name="Default Changelist" comment="" />
+      <created>1604124656613</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604124656613</updated>
+      <workItem from="1604124658188" duration="7864000" />
+      <workItem from="1604212150686" duration="7259000" />
+      <workItem from="1604221680112" duration="1761000" />
+      <workItem from="1604243598437" duration="904000" />
+      <workItem from="1604274164433" duration="4966000" />
+      <workItem from="1604283593997" duration="3722000" />
+      <workItem from="1604294874647" duration="2000" />
+      <workItem from="1604294882620" duration="3070000" />
+      <workItem from="1604327228760" duration="5021000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="569" y="124" key="#Inspections" timestamp="1604131370075">
+      <screen x="0" y="23" width="1680" height="876" />
+    </state>
+    <state x="569" y="124" key="#Inspections/0.23.1680.876@0.23.1680.876" timestamp="1604131370075" />
+    <state x="299" y="62" key="#Project_Structure" timestamp="1604130473352">
+      <screen x="0" y="23" width="1680" height="876" />
+    </state>
+    <state x="299" y="62" key="#Project_Structure/0.23.1680.876@0.23.1680.876" timestamp="1604130473352" />
+    <state x="609" y="223" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604220121339">
+      <screen x="0" y="23" width="1680" height="876" />
+    </state>
+    <state x="609" y="223" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.876@0.23.1680.876" timestamp="1604220121339" />
+    <state x="441" y="275" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604222411123">
+      <screen x="0" y="23" width="1680" height="876" />
+    </state>
+    <state x="441" y="275" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.876@0.23.1680.876" timestamp="1604222411123" />
+    <state x="1306" y="145" key="#com.intellij.ide.util.MemberChooser" timestamp="1604280235741">
+      <screen x="0" y="23" width="1680" height="876" />
+    </state>
+    <state x="1306" y="145" key="#com.intellij.ide.util.MemberChooser/0.23.1680.876@0.23.1680.876" timestamp="1604280235741" />
+    <state width="1638" height="259" key="GridCell.Tab.0.bottom" timestamp="1604368065146">
+      <screen x="0" y="0" width="1680" height="945" />
+    </state>
+    <state width="1638" height="259" key="GridCell.Tab.0.bottom/0.0.1680.945@0.0.1680.945" timestamp="1604368065146" />
+    <state width="1638" height="151" key="GridCell.Tab.0.bottom/0.23.1680.876@0.23.1680.876" timestamp="1604366590557" />
+    <state width="1638" height="259" key="GridCell.Tab.0.center" timestamp="1604368065141">
+      <screen x="0" y="0" width="1680" height="945" />
+    </state>
+    <state width="1638" height="259" key="GridCell.Tab.0.center/0.0.1680.945@0.0.1680.945" timestamp="1604368065141" />
+    <state width="1638" height="151" key="GridCell.Tab.0.center/0.23.1680.876@0.23.1680.876" timestamp="1604366590556" />
+    <state width="1638" height="259" key="GridCell.Tab.0.left" timestamp="1604368065131">
+      <screen x="0" y="0" width="1680" height="945" />
+    </state>
+    <state width="1638" height="259" key="GridCell.Tab.0.left/0.0.1680.945@0.0.1680.945" timestamp="1604368065131" />
+    <state width="1638" height="151" key="GridCell.Tab.0.left/0.23.1680.876@0.23.1680.876" timestamp="1604366590554" />
+    <state width="1638" height="259" key="GridCell.Tab.0.right" timestamp="1604368065142">
+      <screen x="0" y="0" width="1680" height="945" />
+    </state>
+    <state width="1638" height="259" key="GridCell.Tab.0.right/0.0.1680.945@0.0.1680.945" timestamp="1604368065142" />
+    <state width="1638" height="151" key="GridCell.Tab.0.right/0.23.1680.876@0.23.1680.876" timestamp="1604366590556" />
+    <state width="1638" height="259" key="GridCell.Tab.1.bottom" timestamp="1604367645214">
+      <screen x="0" y="0" width="1680" height="945" />
+    </state>
+    <state width="1638" height="259" key="GridCell.Tab.1.bottom/0.0.1680.945@0.0.1680.945" timestamp="1604367645214" />
+    <state width="1638" height="434" key="GridCell.Tab.1.bottom/0.23.1680.876@0.23.1680.876" timestamp="1604286082458" />
+    <state width="1638" height="259" key="GridCell.Tab.1.center" timestamp="1604367645213">
+      <screen x="0" y="0" width="1680" height="945" />
+    </state>
+    <state width="1638" height="259" key="GridCell.Tab.1.center/0.0.1680.945@0.0.1680.945" timestamp="1604367645213" />
+    <state width="1638" height="434" key="GridCell.Tab.1.center/0.23.1680.876@0.23.1680.876" timestamp="1604286082456" />
+    <state width="1638" height="259" key="GridCell.Tab.1.left" timestamp="1604367645212">
+      <screen x="0" y="0" width="1680" height="945" />
+    </state>
+    <state width="1638" height="259" key="GridCell.Tab.1.left/0.0.1680.945@0.0.1680.945" timestamp="1604367645212" />
+    <state width="1638" height="434" key="GridCell.Tab.1.left/0.23.1680.876@0.23.1680.876" timestamp="1604286082454" />
+    <state width="1638" height="259" key="GridCell.Tab.1.right" timestamp="1604367645213">
+      <screen x="0" y="0" width="1680" height="945" />
+    </state>
+    <state width="1638" height="259" key="GridCell.Tab.1.right/0.0.1680.945@0.0.1680.945" timestamp="1604367645213" />
+    <state width="1638" height="434" key="GridCell.Tab.1.right/0.23.1680.876@0.23.1680.876" timestamp="1604286082457" />
+    <state width="1638" height="259" key="GridCell.Tab.2.bottom" timestamp="1604367645216">
+      <screen x="0" y="0" width="1680" height="945" />
+    </state>
+    <state width="1638" height="259" key="GridCell.Tab.2.bottom/0.0.1680.945@0.0.1680.945" timestamp="1604367645216" />
+    <state width="1638" height="434" key="GridCell.Tab.2.bottom/0.23.1680.876@0.23.1680.876" timestamp="1604286002348" />
+    <state width="1638" height="259" key="GridCell.Tab.2.center" timestamp="1604367645215">
+      <screen x="0" y="0" width="1680" height="945" />
+    </state>
+    <state width="1638" height="259" key="GridCell.Tab.2.center/0.0.1680.945@0.0.1680.945" timestamp="1604367645215" />
+    <state width="1638" height="434" key="GridCell.Tab.2.center/0.23.1680.876@0.23.1680.876" timestamp="1604286002345" />
+    <state width="1638" height="259" key="GridCell.Tab.2.left" timestamp="1604367645214">
+      <screen x="0" y="0" width="1680" height="945" />
+    </state>
+    <state width="1638" height="259" key="GridCell.Tab.2.left/0.0.1680.945@0.0.1680.945" timestamp="1604367645214" />
+    <state width="1638" height="434" key="GridCell.Tab.2.left/0.23.1680.876@0.23.1680.876" timestamp="1604286002345" />
+    <state width="1638" height="259" key="GridCell.Tab.2.right" timestamp="1604367645215">
+      <screen x="0" y="0" width="1680" height="945" />
+    </state>
+    <state width="1638" height="259" key="GridCell.Tab.2.right/0.0.1680.945@0.0.1680.945" timestamp="1604367645215" />
+    <state width="1638" height="434" key="GridCell.Tab.2.right/0.23.1680.876@0.23.1680.876" timestamp="1604286002346" />
+    <state x="641" y="103" key="Maven.ArtifactSearchDialog" timestamp="1604131784566">
+      <screen x="0" y="23" width="1680" height="876" />
+    </state>
+    <state x="641" y="103" key="Maven.ArtifactSearchDialog/0.23.1680.876@0.23.1680.876" timestamp="1604131784566" />
+    <state x="409" y="60" key="SettingsEditor" timestamp="1604131387538">
+      <screen x="0" y="23" width="1680" height="876" />
+    </state>
+    <state x="409" y="60" key="SettingsEditor/0.23.1680.876@0.23.1680.876" timestamp="1604131387538" />
+    <state x="416" y="131" key="new project wizard" timestamp="1604219789506">
+      <screen x="0" y="23" width="1680" height="876" />
+    </state>
+    <state x="416" y="131" key="new project wizard/0.23.1680.876@0.23.1680.876" timestamp="1604219789506" />
+    <state x="442" y="216" width="670" height="730" key="search.everywhere.popup" timestamp="1604296407914">
+      <screen x="0" y="0" width="1680" height="945" />
+    </state>
+    <state x="442" y="216" width="670" height="730" key="search.everywhere.popup/0.0.1680.945@0.0.1680.945" timestamp="1604296407914" />
+    <state x="442" y="223" width="670" height="676" key="search.everywhere.popup/0.23.1680.876@0.23.1680.876" timestamp="1604278689889" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/cloud_oauth2$Oauth2AuthApplication.ic" NAME="Oauth2AuthApplication Coverage Results" MODIFIED="1604243669740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.kll.oauth.*</FILTER>
+    </SUITE>
+  </component>
+</project>
