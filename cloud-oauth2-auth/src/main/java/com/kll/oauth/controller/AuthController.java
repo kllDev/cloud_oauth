@@ -3,13 +3,11 @@ package com.kll.oauth.controller;
 import com.kll.common.result.CommonResult;
 import com.kll.oauth.domain.Oauth2TokenDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.endpoint.TokenEndpoint;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.util.Map;
@@ -19,7 +17,7 @@ import java.util.Map;
  * Created by macro on 2020/7/17.
  */
 @RestController
-@RequestMapping("/oauth")
+//@RequestMapping("")
 public class AuthController {
 
     @Autowired
@@ -28,15 +26,19 @@ public class AuthController {
     /**
      * Oauth2登录认证
      */
-    @RequestMapping(value = "/token", method = RequestMethod.POST)
-    public CommonResult<Oauth2TokenDto> postAccessToken(Principal principal, @RequestParam Map<String, String> parameters) throws HttpRequestMethodNotSupportedException {
-        OAuth2AccessToken oAuth2AccessToken = tokenEndpoint.postAccessToken(principal, parameters).getBody();
-        Oauth2TokenDto oauth2TokenDto = Oauth2TokenDto.builder()
-                .token(oAuth2AccessToken.getValue())
-                .refreshToken(oAuth2AccessToken.getRefreshToken().getValue())
-                .expiresIn(oAuth2AccessToken.getExpiresIn())
-                .tokenHead("Bearer ").build();
-
-        return CommonResult.success(oauth2TokenDto);
-    }
+//    @RequestMapping(value = "/token", method = RequestMethod.POST)
+//    public CommonResult<Oauth2TokenDto> postAccessToken(Principal principal, @RequestParam Map<String, String> parameters) throws HttpRequestMethodNotSupportedException {
+//        OAuth2AccessToken oAuth2AccessToken = tokenEndpoint.postAccessToken(principal, parameters).getBody();
+//        Oauth2TokenDto oauth2TokenDto = Oauth2TokenDto.builder()
+//                .token(oAuth2AccessToken.getValue())
+//                .refreshToken(oAuth2AccessToken.getRefreshToken().getValue())
+//                .expiresIn(oAuth2AccessToken.getExpiresIn())
+//                .tokenHead("Bearer ").build();
+//
+//        return CommonResult.success(oauth2TokenDto);
+//    }
+//    @GetMapping("/login")
+//    public Object getCurrentUser(Authentication authentication) {
+//        return authentication;
+//    }
 }
