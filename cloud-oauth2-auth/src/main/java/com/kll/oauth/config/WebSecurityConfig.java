@@ -1,8 +1,7 @@
 package com.kll.oauth.config;
 
-import com.kll.oauth.service.UserServiceImpl;
+import com.kll.oauth.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -21,27 +20,36 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-//    @Bean
-//    public PasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder();
-//    }
-
     @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Autowired
-    public UserServiceImpl userDetailsService;
+    public UserService userDetailsService;
 
+
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        http.authorizeRequests()
+//                .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
+//                .antMatchers("/rsa/publicKey").permitAll()
+//                .anyRequest().permitAll()
+//                .and()
+//                .formLogin()
+//                .successForwardUrl("/login_success");
+//    }
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
-                .antMatchers("/rsa/publicKey").permitAll()
-                .anyRequest().permitAll()
+    public void configure(HttpSecurity http) throws Exception {
+        http.csrf()
+                .disable()
+                .authorizeRequests()
+                .antMatchers("/oauth/**", "/login/**", "/logout/**")
+                .permitAll()
+                .anyRequest()
+                .authenticated()
                 .and()
                 .formLogin()
-                .successForwardUrl("/login_success");
+                .permitAll();
     }
 
     @Override

@@ -1,8 +1,7 @@
 package com.kll.oauth.config;
 
 import com.kll.oauth.component.JwtTokenEnhancer;
-import com.kll.oauth.service.UserServiceImpl;
-import lombok.AllArgsConstructor;
+import com.kll.oauth.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,9 +16,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
-import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
-import org.springframework.security.oauth2.provider.token.TokenEnhancer;
-import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
@@ -27,23 +23,27 @@ import org.springframework.security.rsa.crypto.KeyStoreKeyFactory;
 
 import javax.sql.DataSource;
 import java.security.KeyPair;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Authorization Server - 授权服务器
  */
-@AllArgsConstructor
 @Configuration
 @EnableAuthorizationServer
 public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
 
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
-    private final UserServiceImpl userDetailsService;
-    //鉴权管理器
-    private final AuthenticationManager authenticationManager;
-    private final JwtTokenEnhancer jwtTokenEnhancer;
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private JwtTokenEnhancer jwtTokenEnhancer;
 
     //JDBC获取客户端信息的服务
     @Bean
@@ -69,16 +69,16 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
     //配置客户端信息
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.withClientDetails(jdbcClientDetailsService());  //设置客户端的配置从数据库中读取，存储在oauth_client_details表
-        //内存中配置客户端信息
+        //设置客户端的配置从数据库中读取，存储在oauth_client_details表
+        clients.withClientDetails(jdbcClientDetailsService());
 //        clients.inMemory()
-//                .withClient("client-app")
-//                .secret(passwordEncoder.encode("123456"))
-//                .scopes("all")
-//                .authorizedGrantTypes("password", "refresh_token")
-////                .redirectUris("http://localhost:8882/login", "http://localhost:8883/login")    // 认证成功重定向URL
-//                .accessTokenValiditySeconds(3600)
-//                .refreshTokenValiditySeconds(86400);
+//                .withClient("admin")//配置client_id
+//                .secret(passwordEncoder.encode("admin123456"))//配置client-secret
+//                .accessTokenValiditySeconds(3600)//配置访问token的有效期
+//                .refreshTokenValiditySeconds(864000)//配置刷新token的有效期
+//                .redirectUris("http://www.baidu.com")//配置redirect_uri，用于授权成功后跳转
+//                .scopes("all")//配置申请的权限范围
+//                .authorizedGrantTypes("authorization_code","password");//配置grant_type，表示授权类型
 
     }
 
@@ -86,7 +86,7 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints.authenticationManager(authenticationManager)
-                .userDetailsService(userDetailsService)
+                .userDetailsService(userService)
                 .tokenStore(tokenStore());
 //        TokenEnhancerChain enhancerChain = new TokenEnhancerChain();
 //        List<TokenEnhancer> delegates = new ArrayList<>();

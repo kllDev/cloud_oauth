@@ -24,35 +24,16 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableResourceServer
-@EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
-    @Autowired
-    private LogoutSuccessHandler logoutSuccessHandler;
-
-    @Autowired
-    private TokenStore tokenStore;
-
-
-    @Override
-    public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-        resources.resourceId("project_api").stateless(false);
-        resources.tokenStore(tokenStore);
-    }
-
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http
-                .logout()
-                .logoutUrl("/logout")//虚拟的登出地址
-                .logoutSuccessHandler(logoutSuccessHandler)//登出做的操作
+        http.authorizeRequests()
+                .anyRequest()
+                .authenticated()
                 .and()
-                .authorizeRequests()
-                .antMatchers("/test/hello").permitAll()
-                .antMatchers("/test/**").authenticated();
+                .requestMatchers()
+                .antMatchers("/user/**");//配置需要保护的资源路径
     }
-
-
 
 
 }
