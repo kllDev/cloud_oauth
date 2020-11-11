@@ -45,18 +45,18 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     private JwtTokenEnhancer jwtTokenEnhancer;
 
-    //JDBC获取客户端信息的服务
-    @Bean
-    public JdbcClientDetailsService jdbcClientDetailsService() {
-        return new JdbcClientDetailsService(dataSource);
-    }
-
     @Autowired
     private DataSource dataSource;
 
     @Autowired
     private RedisConnectionFactory connectionFactory;
 
+
+    //JDBC获取客户端信息的服务
+    @Bean
+    public JdbcClientDetailsService jdbcClientDetailsService() {
+        return new JdbcClientDetailsService(dataSource);
+    }
     @Bean
     public TokenStore tokenStore() {
         //使用redis存储token
@@ -83,6 +83,8 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
     }
 
     //告诉spring security token的生成方式
+
+    //同时还有授权码模式，可以选择
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints.authenticationManager(authenticationManager)
@@ -102,6 +104,7 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
 //                .tokenStore(tokenStore());
     }
 
+    //令牌访问端点的安全策略
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security.tokenKeyAccess("permitAll()");  // 获取 token 的策略
@@ -110,22 +113,22 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
     }
 
 
-
-    @Bean
-    public JwtAccessTokenConverter accessTokenConverter() {
-        JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
-//        设置jwt为公钥私钥形式的非对称加密形式
-        jwtAccessTokenConverter.setKeyPair(keyPair());
-        return jwtAccessTokenConverter;
-    }
-
-    //非对称加密获取公钥的方法
-    @Bean
-    public KeyPair keyPair() {
-        //从classpath下的证书中获取秘钥对
-        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("jwt.jks"), "112358".toCharArray());
-        return keyStoreKeyFactory.getKeyPair("jwt", "112358".toCharArray());
-    }
+//
+//    @Bean
+//    public JwtAccessTokenConverter accessTokenConverter() {
+//        JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
+////        设置jwt为公钥私钥形式的非对称加密形式
+//        jwtAccessTokenConverter.setKeyPair(keyPair());
+//        return jwtAccessTokenConverter;
+//    }
+//
+//    //非对称加密获取公钥的方法
+//    @Bean
+//    public KeyPair keyPair() {
+//        //从classpath下的证书中获取秘钥对
+//        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("jwt.jks"), "112358".toCharArray());
+//        return keyStoreKeyFactory.getKeyPair("jwt", "112358".toCharArray());
+//    }
 
 
 
